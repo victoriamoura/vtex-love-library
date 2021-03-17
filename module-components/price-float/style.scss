@@ -1,0 +1,120 @@
+.float-price {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 40;
+	background: $branco;
+	padding: 6px 10px;
+	display: none;
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+
+	@include breakpoint($tablet-s) {
+		padding: 10px;
+	}
+
+	&.show {
+		display: block;
+	}
+
+	.box {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 800px;
+		margin: 0 auto;
+		align-items: center;
+		justify-content: space-between;
+
+		.minipic {
+			width: 75px;
+			height: 75px;
+			overflow: hidden;
+			border: 1px solid #eee;
+
+			.pic-float {
+				width: auto;
+				max-width: 100%;
+				display: block;
+			}
+
+			@include breakpoint($tablet-s) {
+				width: 45px;
+				height: 45px;
+				margin-bottom: 7px;
+			}
+		}
+
+		.name-product {
+			width: calc(100% - 335px);
+			font-weight: bold;
+			font-size: 14px;
+			margin: 0;
+			line-height: 1.2;
+			text-align: center;
+
+			@include breakpoint($tablet-s) {
+				margin-bottom: 10px;
+				width: calc(100% - 50px);
+			}
+		}
+
+		.add-cart {
+			width: 240px;
+			display: flex;
+			justify-content: space-between;
+
+			@include breakpoint($tablet-s) {
+				width: 100%;
+			}
+
+			.value-quantity {
+				display: flex;
+				border: 1px solid #aaa;
+				width: 25px;
+				justify-content: center;
+				align-items: center;
+				font-size: 32px;
+				line-height: 1;
+				background: $branco;
+				// border-radius: 6px;
+				border: 1px solid #dfdfdf;
+
+				&.rmv-qtd {
+					background: #aaa;
+				}
+
+				&:hover {
+					background: $cor-3 !important;
+					color: $branco !important;
+					border: 1px solid $cor-3 !important;
+					cursor: pointer;
+				}
+			}
+
+			.buy-in-page-quantity {
+				display: block !important;
+				width: calc(100% - 195px);
+				text-align: center;
+				font-size: 16px;
+				line-height: 1;
+				color: $preto;
+				font-weight: bold;
+				// border-radius: 6px;
+				border: 1px solid #dfdfdf;
+			}
+
+			.buy-in-page-button,
+			.new-buy-in-page-button {
+				display: block !important;
+				padding: 7px 10px 5px;
+				color: $branco;
+				font-weight: bold;
+				font-size: 14px;
+				width: 120px;
+				text-align: center;
+				cursor: pointer;
+			}
+		}
+	}
+}
